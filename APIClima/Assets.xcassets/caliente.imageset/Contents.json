@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "concepto-de-clima-soleado-sun-y-termómetro-en-el-espacio-copia-superior-la-vista-fondo-amarilla-del-amarillo-sol-161004417.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

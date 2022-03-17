@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "llover-el-fondo-del-cielo-significa-el-tiempo-o-tormentas-lluvioso-42079663.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
