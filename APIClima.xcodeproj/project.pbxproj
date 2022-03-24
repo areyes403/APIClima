@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48D23BAE27ECC265000716DC /* DatosClima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D23BAD27ECC265000716DC /* DatosClima.swift */; };
+		48D23BB127ECC3A2000716DC /* ClimaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D23BB027ECC3A2000716DC /* ClimaModelo.swift */; };
 		48EC274F27E3862F007B5190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC274E27E3862F007B5190 /* AppDelegate.swift */; };
 		48EC275127E3862F007B5190 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC275027E3862F007B5190 /* SceneDelegate.swift */; };
 		48EC275327E3862F007B5190 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC275227E3862F007B5190 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48D23BAD27ECC265000716DC /* DatosClima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosClima.swift; sourceTree = "<group>"; };
+		48D23BB027ECC3A2000716DC /* ClimaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaModelo.swift; sourceTree = "<group>"; };
 		48EC274B27E3862F007B5190 /* APIClima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIClima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EC274E27E3862F007B5190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48EC275027E3862F007B5190 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				48EC275927E38630007B5190 /* LaunchScreen.storyboard */,
 				48EC275C27E38630007B5190 /* Info.plist */,
 				48EE4E4B27EB711000238721 /* ClimaManager.swift */,
+				48D23BAD27ECC265000716DC /* DatosClima.swift */,
+				48D23BB027ECC3A2000716DC /* ClimaModelo.swift */,
 			);
 			path = APIClima;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D23BB127ECC3A2000716DC /* ClimaModelo.swift in Sources */,
 				48EC275327E3862F007B5190 /* ViewController.swift in Sources */,
+				48D23BAE27ECC265000716DC /* DatosClima.swift in Sources */,
 				48EC274F27E3862F007B5190 /* AppDelegate.swift in Sources */,
 				48EE4E4C27EB711000238721 /* ClimaManager.swift in Sources */,
 				48EC275127E3862F007B5190 /* SceneDelegate.swift in Sources */,
