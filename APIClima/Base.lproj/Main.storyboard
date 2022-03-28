@@ -102,6 +102,13 @@
                             <constraint firstItem="6sV-jd-ACP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="lgy-xj-Rrc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnBuscar" destination="z6o-6L-VBc" id="UOK-cn-Mza"/>
+                        <outlet property="imgIcono" destination="oir-Cx-pee" id="XdJ-sA-tPn"/>
+                        <outlet property="txtTemperatura" destination="QQY-mU-eA2" id="TBL-Cu-HeN"/>
+                        <outlet property="txtTexto" destination="kyP-Hl-2DP" id="iVE-vy-Swu"/>
+                        <outlet property="txtfCiudad" destination="LRf-Eb-N14" id="81G-XE-J5w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,7 +36,7 @@ struct ClimaModelo {
         case 801...831:
             return "cloud"
         default:
-            return "cloud"
+            return "sun.max"
         }
     }
 }
