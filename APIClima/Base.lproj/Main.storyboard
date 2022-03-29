@@ -48,6 +48,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="qqF-jK-Q3Z"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="btnSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjG-zd-75E"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -103,11 +106,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnBuscar" destination="z6o-6L-VBc" id="UOK-cn-Mza"/>
                         <outlet property="imgIcono" destination="oir-Cx-pee" id="XdJ-sA-tPn"/>
+                        <outlet property="textFieldCiudad" destination="LRf-Eb-N14" id="4hG-cV-vr8"/>
                         <outlet property="txtTemperatura" destination="QQY-mU-eA2" id="TBL-Cu-HeN"/>
                         <outlet property="txtTexto" destination="kyP-Hl-2DP" id="iVE-vy-Swu"/>
-                        <outlet property="txtfCiudad" destination="LRf-Eb-N14" id="81G-XE-J5w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -15,11 +15,12 @@ protocol ClimaManagerDelegado {
 
 
 struct ClimaManager {
-    let climaURL=""
+    let climaURL="https://api.openweathermap.org/data/2.5/weather?"
+    let apikey="4b919868c1c3d49dca4e11f89c04d5bc"
     var delegado: ClimaManagerDelegado?
     
     func obtenerClima(nombreCiudad: String){
-        let urlString="\(climaURL)&q=\(nombreCiudad)"
+        let urlString="\(climaURL)&q=\(nombreCiudad)&appid=\(apikey)"
         
         print(urlString)
         realizarSolicitud(urlString: urlString)
