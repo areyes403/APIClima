@@ -15,25 +15,24 @@ protocol ClimaManagerDelegado {
 
 
 struct ClimaManager {
-    let climaURL="https://api.openweathermap.org/data/2.5/weather?"
-    let apikey="4b919868c1c3d49dca4e11f89c04d5bc"
+    //let climaURL="https://api.openweathermap.org/data/2.5/weather?"
+    let climaURL="https://api.openweathermap.org/data/2.5/weather?&appid=4b919868c1c3d49dca4e11f89c04d5bc"
+    //let apikey="4b919868c1c3d49dca4e11f89c04d5bc"
     var delegado: ClimaManagerDelegado?
     
     func obtenerClima(nombreCiudad: String){
-        let urlString="\(climaURL)&q=\(nombreCiudad)&appid=\(apikey)"
-        
+      //  let urlString="\(climaURL)&q=\(nombreCiudad)&appid=\(apikey)"
+        let urlString="\(climaURL)&q=\(nombreCiudad)"
         print(urlString)
         realizarSolicitud(urlString: urlString)
     }
-    
+    k
     
     func realizarSolicitud(urlString: String){
         if let url=URL(string: urlString){
             let session=URLSession(configuration: .default)
             
-            //let tarea = session.dataTask(with: url, completionHandler: controladorFinalizacion(datos:respuesta:error:))
             let tarea = session.dataTask(with: url){ datos, respuesta, error in
-                
                 if error != nil {
                     //print(error?.localizedDescription)
                     delegado?.huboEror(error: error!)

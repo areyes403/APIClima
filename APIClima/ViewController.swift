@@ -16,28 +16,33 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var textFieldCiudad: UITextField!
     @IBOutlet weak var imgIcono: UIImageView!
     @IBOutlet weak var txtTexto: UILabel!
-    var clima = ClimaManager()
+    var climaManager = ClimaManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        textFieldCiudad.delegate = self
         
     }
     
     @IBAction func btnSearch(_ sender: UIButton) {
-        clima.obtenerClima(nombreCiudad: textFieldCiudad.text ?? "")
+        textFieldCiudad.endEditing(true)
+        //climaManager.obtenerClima(nombreCiudad: textFieldCiudad.text ?? "")
         print("hice una accion")
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("boton presionado")
+        textFieldCiudad.endEditing(true)
         //print()
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        climaManager.obtenerClima(nombreCiudad: textFieldCiudad.text!)
         print("termino de editar")
     }
     
@@ -45,8 +50,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         if textFieldCiudad.text != ""{
             return true
         }else{
-            print("Escribe el nombre de una ciudad")
-            txtTexto.text="Escribe una ciudad porfavor"
+            //print("Escribe el nombre de una ciudad")
+            textFieldCiudad.placeholder = "Escribe una ciudad porfavor"
             return false
         }
         
