@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBAction func btnSearch(_ sender: UIButton) {
         textFieldCiudad.endEditing(true)
         //climaManager.obtenerClima(nombreCiudad: textFieldCiudad.text ?? "")
-        print("hice una accion")
+        print(textFieldCiudad.text)
         
     }
     
@@ -43,7 +43,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         climaManager.obtenerClima(nombreCiudad: textFieldCiudad.text!)
-        print("termino de editar")
+        //print("termino de editar")
+        textFieldCiudad.placeholder = ""
+        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

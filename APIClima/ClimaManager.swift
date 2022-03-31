@@ -26,12 +26,13 @@ struct ClimaManager {
         print(urlString)
         realizarSolicitud(urlString: urlString)
     }
-    k
+    
     
     func realizarSolicitud(urlString: String){
         if let url=URL(string: urlString){
+            //print("Llegue a hacer la solicitud de URL")
             let session=URLSession(configuration: .default)
-            
+            /*
             let tarea = session.dataTask(with: url){ datos, respuesta, error in
                 if error != nil {
                     //print(error?.localizedDescription)
@@ -47,6 +48,8 @@ struct ClimaManager {
                 }
                 
             }
+ */
+            let tarea = session.dataTask(with: url, completionHandler: manejador(datos:respuesta:error:))
             tarea.resume()
         }
         
@@ -70,6 +73,20 @@ struct ClimaManager {
             //print(error)
             delegado?.huboEror(error: error)
             return nil
+        }
+    }
+    
+    func manejador(datos: Data?, respuesta : URLResponse?, error: Error?) -> Void {
+        print("Entre al manejador")
+        if error != nil {
+            print("Error")
+            return
+        }
+        
+        if let datosSeguros = datos {
+            print("estoy en datos seguros")
+            let datosString = String(data: datosSeguros, encoding: .utf8)
+            print(datosString)
         }
     }
     
