@@ -7,7 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate{
+class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegado{
+    func actualizarClima(objClima: ClimaModelo) {
+        DispatchQueue.main.async {
+            self.txtTemperatura.text = String(objClima.temperatura)
+            self.txtTexto.text = "\(objClima.nombreCiudad) its \(objClima.description)"
+        }
+    }
+    
+    func huboEror(error: Error) {
+        
+    }
     
     
     
@@ -22,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        climaManager.delegado = self
         textFieldCiudad.delegate = self
         
     }
@@ -58,14 +69,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
         
     }
-  /*
-extension ViewController: ClimaManagerDelegado{
-        
-        func actualizarClima(objClima: ClimaModelo){}
-        
-        func huboError(error: Error!){}
-    }*/
 
+   
+    
 
 }
 
