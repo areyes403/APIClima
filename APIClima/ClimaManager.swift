@@ -30,32 +30,25 @@ struct ClimaManager {
     
     func realizarSolicitud(urlString: String){
         if let url=URL(string: urlString){
-            //print("Llegue a hacer la solicitud de URL")
             let session=URLSession(configuration: .default)
-            /*
-            let tarea = session.dataTask(with: url){ datos, respuesta, error in
+            
+            let tarea = session.dataTask(with: url) { (datos, respuesta, error) in
                 if error != nil {
-                    //print(error?.localizedDescription)
-                    delegado?.huboEror(error: error!)
+                    print("Error al obtener los datos")
                     return
                 }
                 
                 if let datosSeguros = datos {
-                    //analizarJSON(datosClima:datosSeguros)
-                    if let objClima = analizarJSON(datosClima: datosSeguros){
-                        delegado?.actualizarClima(objClima: objClima)
-                    }
+                    //parsear JSON
+                    parsearJSON(datosClima: datosSeguros)
                 }
-                
             }
- */
-            let tarea = session.dataTask(with: url, completionHandler: manejador(datos:respuesta:error:))
             tarea.resume()
         }
         
     }
     
-    
+    /*
     func analizarJSON(datosClima: Data) -> ClimaModelo? {
         let decodificador = JSONDecoder()
         do{
@@ -64,9 +57,9 @@ struct ClimaManager {
             let nombreCiudad = datosDecodificados.name
             let temperatura = datosDecodificados.main.temp
             //let humedad = datosDecodificados.main.humidity ?? 20
-            
+            print ("La ciudad que buscaste es: " + nombreCiudad)
             var objClimaModelo = ClimaModelo(condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura)
-            
+            //print(objClimaModelo.nombreCondicion)
             return objClimaModelo
             
         }catch{
@@ -74,20 +67,26 @@ struct ClimaManager {
             delegado?.huboEror(error: error)
             return nil
         }
-    }
+    }*/
     
-    func manejador(datos: Data?, respuesta : URLResponse?, error: Error?) -> Void {
-        print("Entre al manejador")
-        if error != nil {
-            print("Error")
-            return
+    
+    func parsearJSON(datosClima: Data){
+        let decodificador = JSONDecoder()
+        do {
+            let datosDecodificados = try decodificador.decode(DatosClima.self, from: datosClima)
+            print("La ciudad que buscaste es : " + datosDecodificados.name)
+            //let condicionID = datosDecodificados.weather[0].id
+            //let nombreCiudad = datosDecodificados.name
+            //let temperatura = datosDecodificados.main.temp
+            
+            
+            //let objClima=ClimaModelo(condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura)
+            //print(objClima.nombreCondicion)
+            
+        } catch {
+            print("Error al decodificar"+error.localizedDescription)
         }
         
-        if let datosSeguros = datos {
-            print("estoy en datos seguros")
-            let datosString = String(data: datosSeguros, encoding: .utf8)
-            print(datosString)
-        }
+        
     }
-    
 }

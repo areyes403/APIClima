@@ -21,22 +21,20 @@ struct ClimaModelo {
         switch condicionID{
         case 200...232:
             return "cloud.bolt"
-        case 300...351:
+        case 300...321:
             return "cloud.bolt.fill"
-        case 400...451:
-            return "cloud.bolt"
-        case 500...551:
-            return "cloud.bolt.fill"
-        case 600...650:
-            return "cloud.bolt"
-        case 700...721:
-            return "cloud.bolt.fill"
+        case 500...531:
+            return "cloud.sleet"
+        case 600...622:
+            return "snow"
+        case 700...781:
+            return "sun.dust"
         case 800:
-            return "cloud"
-        case 801...831:
-            return "cloud"
-        default:
             return "sun.max"
+        case 801...831:
+            return "cloud.sun"
+        default:
+            return "cloud"
         }
     }
 }
