@@ -13,6 +13,8 @@ struct ClimaModelo {
     let nombreCiudad: String
     let temperatura: Double
     let description: String
+    let maxima: Double
+    let minima: Double
     
     var temperaturaString: String{
         return String(format: "%.1f", temperatura)

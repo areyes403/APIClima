@@ -16,6 +16,9 @@ struct DatosClima: Decodable {
 
 struct Main: Decodable {
     let temp: Double
+    let temp_min: Double
+    let temp_max: Double
+    
 }
 
 struct Weather: Decodable {

@@ -62,8 +62,11 @@ struct ClimaManager {
             let descripcion = datosDecodificados.weather[0].description
             let nombreCiudad = datosDecodificados.name
             let temperatura = datosDecodificados.main.temp
+            let min = datosDecodificados.main.temp_min
+            let max = datosDecodificados.main.temp_max
+
             
-            let objClima = ClimaModelo (condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura, description: descripcion)
+            let objClima = ClimaModelo (condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura, description: descripcion, maxima: max, minima: min)
             
             return objClima
             
@@ -74,27 +77,5 @@ struct ClimaManager {
         
         
     }
-    /*
-    func analizarJSON(datosClima: Data) -> ClimaModelo? {
-        let decodificador = JSONDecoder()
-        do{
-            let datosDecodificados = try decodificador.decode(DatosClima.self, from: datosClima)
-            let condicionID = datosDecodificados.weather[0].id
-            let nombreCiudad = datosDecodificados.name
-            let temperatura = datosDecodificados.main.temp
-            //let humedad = datosDecodificados.main.humidity ?? 20
-            print ("La ciudad que buscaste es: " + nombreCiudad)
-            var objClimaModelo = ClimaModelo(condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura)
-            //print(objClimaModelo.nombreCondicion)
-            return objClimaModelo
-            
-        }catch{
-            //print(error)
-            delegado?.huboEror(error: error)
-            return nil
-        }
-    }*/
-    
-    
-    
+   
 }
